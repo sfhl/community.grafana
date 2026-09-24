@@ -329,9 +329,6 @@ def is_grafana_dashboard_changed(payload, dashboard):
     if "version" in payload["dashboard"]:
         del payload["dashboard"]["version"]
 
-    if "version" in dashboard["dashboard"]:
-        del dashboard["dashboard"]["version"]
-
     # Normalize folder information for comparison
     if "folderUid" not in dashboard:
         dashboard["folderUid"] = dashboard.get("meta", {}).get("folderUid", "")
